@@ -1,0 +1,377 @@
+AIM To study the basic hardware components of computer networking and
+understand the functions of common networking devices.
+
+THEORY 1. A computer network connects computers and devices to share
+data, resources, and services. 2. Network Interface Card (NIC): Connects
+a computer to a wired or wireless network. It has a unique MAC address.
+3. Hub: Connects devices in a LAN and broadcasts incoming data to all
+its ports. 4. Switch: Connects devices in a LAN and forwards frames
+using MAC addresses. It reduces unnecessary traffic. 5. Router: Connects
+different networks and forwards packets using IP addresses. 6. Modem:
+Converts signals as required for communication through an internet
+service provider. 7. Repeater: Regenerates weak signals to extend the
+communication distance. 8. Bridge: Connects LAN segments and filters
+traffic between them. 9. Wireless Access Point: Allows wireless devices
+to connect to a wired network through Wi-Fi. 10. Transmission media:
+Twisted-pair and fibre-optic cables carry data through wired
+connections; radio waves carry data wirelessly. 11. Hub works by
+broadcasting data, whereas a switch sends frames to the required port
+when the destination is known. 12. A router selects the next path for a
+packet using its routing table.
+
+PROCEDURE / WORKING 1. Identify the available networking devices and
+observe their ports and indicators. 2. Identify Ethernet cables, RJ-45
+connectors, and wireless antennas. 3. Study the purpose of each device
+and compare hub, switch, and router. 4. Trace a typical connection:
+computer → switch → router → internet. 5. Record the name and function
+of each component.
+
+CONCLUSION The basic networking hardware components and their functions
+were studied. Their roles in connecting devices and transferring data
+were understood.
+
+  ---------------------
+  END OF EXPERIMENT 1
+  ---------------------
+
+========================================================================
+2. TCP SOCKET PROGRAMMING – SERVER
+========================================================================
+
+AIM To implement a TCP server using socket programming and establish
+reliable communication with a client.
+
+THEORY 1. Socket: An endpoint used by an application for network
+communication. 2. TCP (Transmission Control Protocol) is a
+connection-oriented transport-layer protocol. 3. TCP establishes a
+connection using a three-way handshake: SYN, SYN-ACK, and ACK. 4. TCP
+provides reliable and ordered data delivery using sequence numbers and
+acknowledgements. 5. If data is lost, TCP retransmits it. It also
+provides flow control and congestion control. 6. A TCP server creates a
+stream socket using socket(). 7. bind() assigns the server socket a
+local IP address and port number. 8. listen() makes the socket wait for
+incoming connection requests. 9. accept() accepts a client connection
+and returns a connected socket. 10. recv() or read() receives data,
+while send() or write() sends data. 11. close() terminates the connected
+socket after communication. 12. The listening socket can remain
+available to accept other clients.
+
+PROCEDURE / WORKING 1. Create a TCP stream socket. 2. Specify the server
+IP address and port number. 3. Bind the socket using bind(). 4. Call
+listen() to wait for client requests. 5. Use accept() to accept an
+incoming client connection. 6. Receive the client’s message using recv()
+or read(). 7. Send a reply using send() or write(), if required. 8.
+Close the connected socket after communication. 9. Use 127.0.0.1 for
+testing on the same computer, or the server’s reachable IP address for a
+LAN test.
+
+CONCLUSION A TCP server was implemented using socket programming. The
+functions socket(), bind(), listen(), accept(), send(), recv(), and
+close() were studied.
+
+  ---------------------
+  END OF EXPERIMENT 2
+  ---------------------
+
+========================================================================
+3. TCP SOCKET PROGRAMMING – CLIENT
+========================================================================
+
+AIM To implement a TCP client and communicate with a TCP server using
+socket programming.
+
+THEORY 1. A socket is an endpoint that allows an application to send and
+receive network data. 2. TCP is a connection-oriented transport-layer
+protocol. 3. The client establishes a connection with the server using
+the server’s IP address and port number. 4. The TCP three-way handshake
+uses SYN, SYN-ACK, and ACK messages. 5. TCP provides reliable, ordered
+delivery of a byte stream. 6. Sequence numbers and acknowledgements help
+detect missing data and support retransmission. 7. socket() creates a
+TCP stream socket. 8. connect() requests a connection to the server. 9.
+send() or write() transmits data to the server. 10. recv() or read()
+receives data from the server. 11. close() releases the socket after
+communication. 12. The operating system normally assigns a temporary
+local port to the client.
+
+PROCEDURE / WORKING 1. Create a TCP stream socket. 2. Enter the server’s
+IP address and port number. 3. Call connect() to request a connection.
+4. Check whether the connection is successful. 5. Prepare a message and
+send it using send() or write(). 6. Receive the server’s response using
+recv() or read(). 7. Display the received message. 8. Close the socket
+after the exchange is complete. 9. Ensure that the server is running and
+that the client uses the correct IP address and port.
+
+CONCLUSION A TCP client was implemented and communication with a TCP
+server was demonstrated. The use of connect(), send(), recv(), and
+close() was understood.
+
+  ---------------------
+  END OF EXPERIMENT 3
+  ---------------------
+
+========================================================================
+4. UDP SOCKET PROGRAMMING – SERVER
+========================================================================
+
+AIM To implement a UDP server and exchange data using datagram sockets.
+
+THEORY 1. UDP (User Datagram Protocol) is a connectionless
+transport-layer protocol. 2. UDP sends independent messages called
+datagrams. 3. UDP does not establish a connection or perform a handshake
+before sending data. 4. UDP does not guarantee delivery, ordering, or
+retransmission of lost datagrams. 5. UDP has low overhead and is
+suitable for applications that need low delay. 6. socket() creates a
+datagram socket using the UDP socket type. 7. bind() assigns the server
+a local IP address and port number. 8. recvfrom() receives a datagram
+and provides the sender’s address. 9. sendto() sends a reply to the
+specified client address. 10. A single UDP server socket can receive
+datagrams from multiple clients. 11. UDP commonly uses applications such
+as DNS, online gaming, and real-time audio/video.
+
+PROCEDURE / WORKING 1. Create a UDP datagram socket. 2. Prepare the
+server IP address and port number. 3. Bind the socket using bind(). 4.
+Wait for a client message using recvfrom(). 5. Read and process the
+received datagram. 6. Use the sender address returned by recvfrom() to
+prepare the reply. 7. Send the reply using sendto(). 8. Repeat the
+receive and reply process as required. 9. Close the socket when the
+server is stopped.
+
+CONCLUSION A UDP server was implemented using datagram socket functions.
+The use of socket(), bind(), recvfrom(), and sendto() was understood.
+
+  ---------------------
+  END OF EXPERIMENT 4
+  ---------------------
+
+========================================================================
+5. UDP SOCKET PROGRAMMING – CLIENT
+========================================================================
+
+AIM To implement a UDP client and exchange datagrams with a UDP server.
+
+THEORY 1. UDP is a connectionless transport-layer protocol used to
+transfer datagrams. 2. A UDP client creates a datagram socket to send
+and receive messages. 3. The server is identified using its IP address
+and port number. 4. sendto() sends a datagram to the specified server
+address. 5. recvfrom() receives a datagram and can identify the sender.
+6. UDP does not require a connection setup before data transfer. 7. UDP
+does not guarantee delivery, ordering, or retransmission. 8. Each UDP
+send operation transfers a separate datagram. 9. UDP has less overhead
+than TCP and is useful for low-delay communication. 10. Examples of UDP
+applications include DNS, online games, voice calls, and video
+streaming. 11. Applications that need reliability must implement their
+own acknowledgement and retransmission methods.
+
+PROCEDURE / WORKING 1. Create a UDP datagram socket. 2. Specify the
+server IP address and port number. 3. Prepare the message to be sent. 4.
+Send the message using sendto(). 5. Wait for the server’s reply using
+recvfrom(), if a reply is expected. 6. Display the received response. 7.
+Close the socket after communication. 8. Check the server address, port,
+and network connection if no response is received.
+
+CONCLUSION A UDP client was implemented using socket programming. The
+operation of sendto() and recvfrom() and the connectionless nature of
+UDP were studied.
+
+  ---------------------
+  END OF EXPERIMENT 5
+  ---------------------
+
+========================================================================
+6. DNS ANALYSIS USING DNS COMMANDS AND PACKET TRACER
+========================================================================
+
+AIM To analyse DNS application-layer packets using DNS commands and a
+packet-tracer tool.
+
+THEORY 1. DNS (Domain Name System) converts domain names into IP
+addresses. 2. It allows users to access websites using names instead of
+remembering IP addresses. 3. DNS uses a hierarchical structure
+consisting of root servers, top-level domains, and domain name servers.
+4. A DNS resolver finds the requested record using its cache or by
+contacting other DNS servers. 5. An A record maps a domain name to an
+IPv4 address. 6. An AAAA record maps a domain name to an IPv6 address.
+7. A CNAME record specifies an alias for another domain name. 8. An MX
+record identifies mail servers for a domain. 9. DNS commonly uses UDP
+port 53 for queries and responses. TCP port 53 is also used in some
+cases. 10. A DNS message contains a transaction ID, flags, questions,
+answers, and other record sections. 11. nslookup and dig are commands
+used to obtain DNS information. 12. A packet-tracer tool can display DNS
+query and response packets.
+
+PROCEDURE / WORKING 1. Connect the computer to a network and verify its
+IP configuration. 2. Open the command prompt or terminal. 3. Run
+nslookup followed by a domain name, for example: nslookup example.com.
+4. Note the DNS server address and the IP address returned. 5. Open the
+packet-tracer or packet-analysis tool. 6. Generate a DNS query by
+running the command again. 7. Locate the DNS query and response packets.
+8. Inspect source and destination IP addresses and UDP port 53. 9.
+Observe the queried domain name, record type, transaction ID, and
+answer.
+
+CONCLUSION DNS name resolution was analysed using commands and packet
+inspection. DNS records, port 53, and the structure of DNS query and
+response packets were studied.
+
+  ---------------------
+  END OF EXPERIMENT 6
+  ---------------------
+
+========================================================================
+7. PACKET ANALYSIS OF APPLICATION-LAYER PACKETS
+========================================================================
+
+AIM To capture and analyse application-layer packets using a
+packet-tracer or packet-analysis tool.
+
+THEORY 1. The application layer provides network services to user
+applications. 2. HTTP and HTTPS are used for web communication. 3. DNS
+is used to translate domain names into IP addresses. 4. FTP is used for
+file transfer, while SMTP is used for sending email. 5. DHCP provides
+automatic IP configuration to network devices. 6. Application data is
+passed to the transport layer for delivery. 7. TCP or UDP adds
+transport-layer information, including port numbers. 8. The IP layer
+adds source and destination IP addresses. 9. A packet-analysis tool
+captures and displays network traffic. 10. Packet details include source
+and destination addresses, protocol, port numbers, and packet length.
+11. Packet inspection helps identify protocol behaviour and
+communication problems. 12. Encrypted protocols may hide application
+data, although some packet metadata remains visible.
+
+PROCEDURE / WORKING 1. Open the packet-tracer or packet-analysis tool.
+2. Select a network topology or the required network interface. 3.
+Ensure that devices have valid IP addresses and required services are
+running. 4. Generate application traffic, such as a DNS query or web
+request. 5. Start the simulation or packet capture. 6. Select an
+application-layer packet from the event list or captured packets. 7.
+Inspect its protocol, source and destination addresses, and port
+numbers. 8. Open packet details and examine the information at each
+protocol layer. 9. Compare request and response packets.
+
+CONCLUSION Application-layer packets were captured and analysed. The
+role of application protocols, port numbers, packet encapsulation, and
+packet-analysis tools was understood.
+
+  ---------------------
+  END OF EXPERIMENT 7
+  ---------------------
+
+========================================================================
+8. IMPLEMENT SLIDING WINDOW PROTOCOLS
+========================================================================
+
+AIM To implement the Sliding Window Protocol and study efficient and
+reliable frame transmission.
+
+THEORY 1. The Sliding Window Protocol is used for flow control and error
+control in data communication. 2. It allows multiple frames to be sent
+before acknowledgements are received. 3. The sender window specifies the
+frames that the sender is allowed to transmit. 4. The receiver window
+specifies the frames that the receiver can accept. 5. Sequence numbers
+identify frames and help detect duplicate or missing frames. 6. An
+acknowledgement confirms successful receipt of a frame. 7. When
+acknowledgements arrive, the sender window moves forward. 8. Timers help
+detect missing acknowledgements and trigger retransmission. 9. Go-Back-N
+retransmits the missing frame and the later outstanding frames. 10.
+Selective Repeat retransmits only the specific lost or damaged frames.
+11. Sliding windows improve link utilisation compared with Stop-and-Wait
+transmission. 12. For k sequence bits, the sequence-number space
+contains 2^k values.
+
+PROCEDURE / WORKING 1. Select the number of sequence bits and calculate
+the sequence-number range. 2. Set the sender and receiver window sizes.
+3. Initialise the sender and receiver window positions. 4. Transmit
+frames up to the sender window limit. 5. Check received frames and send
+acknowledgements. 6. Move the sender window forward when
+acknowledgements arrive. 7. If a frame is lost, use a timer to detect
+the loss. 8. Retransmit frames according to Go-Back-N or Selective
+Repeat rules. 9. Continue until all frames are received and
+acknowledged. 10. Observe window movement, acknowledgements, and
+retransmissions.
+
+CONCLUSION The Sliding Window Protocol was implemented and studied.
+Sequence numbers, window movement, acknowledgements, timers, and
+retransmission methods were understood.
+
+  ---------------------
+  END OF EXPERIMENT 8
+  ---------------------
+
+========================================================================
+9. IMPLEMENT TRAFFIC-SHAPING ALGORITHMS
+========================================================================
+
+AIM To implement traffic-shaping algorithms and study how they control
+the rate of data transmission.
+
+THEORY 1. Traffic shaping controls the rate at which packets are sent
+into a network. 2. It reduces sudden bursts of traffic and helps manage
+congestion. 3. Traffic shaping can reduce queue overflow and improve
+traffic flow. 4. Leaky Bucket uses a finite queue to store incoming
+packets. 5. Packets leave the Leaky Bucket at a fixed rate. 6. If the
+bucket is full, additional packets are discarded. 7. Leaky Bucket
+produces a steady output rate and does not naturally allow large bursts.
+8. Token Bucket generates tokens at a fixed rate and stores them up to a
+maximum capacity. 9. A packet can be transmitted when enough tokens are
+available. 10. Unused tokens allow a controlled burst of traffic after
+an idle period. 11. Token Bucket controls the average rate while
+allowing limited bursts. 12. Leaky Bucket smooths output, whereas Token
+Bucket permits controlled bursts.
+
+PROCEDURE / WORKING 1. Leaky Bucket algorithm: 2. Set the queue capacity
+and fixed output rate. 3. Read incoming packets and add them to the
+queue if space is available. 4. Discard or reject packets when the queue
+is full. 5. Transmit packets at the configured output rate until the
+queue is empty. 6. Token Bucket algorithm: 7. Set the token-generation
+rate and bucket capacity. 8. Generate tokens at the configured rate
+without exceeding the capacity. 9. When a packet arrives, check whether
+enough tokens are available. 10. If enough tokens exist, consume the
+tokens and transmit the packet. 11. If tokens are insufficient, delay or
+drop the packet according to the implementation. 12. Compare packet
+delay, queue size, output rate, and dropped packets.
+
+CONCLUSION The Leaky Bucket and Token Bucket algorithms were implemented
+and studied. Their working, rate control, queue behaviour, and handling
+of bursty traffic were understood.
+
+  ---------------------
+  END OF EXPERIMENT 9
+  ---------------------
+
+========================================================================
+10. IMPLEMENT DISTANCE VECTOR ALGORITHM
+========================================================================
+
+AIM To implement the Distance Vector Routing Algorithm and determine
+minimum-cost routes between network nodes.
+
+THEORY 1. Routing selects a path for forwarding packets from source to
+destination. 2. A router stores route information in a routing table. 3.
+Distance Vector Routing is a dynamic routing algorithm. 4. Each router
+maintains the distance and next hop for known destinations. 5. Routers
+exchange routing information with their directly connected neighbours.
+6. The algorithm is based on the Bellman-Ford principle. 7. The cost
+through a neighbour is the link cost plus that neighbour’s advertised
+cost to the destination. 8. A router selects the route with the lowest
+total cost. 9. Routing tables are updated whenever a better route is
+learned. 10. The repeated exchange of information continues until the
+tables stop changing; this is called convergence. 11. Distance Vector
+routing is simple but may converge slowly after network changes. 12.
+Routing loops and the count-to-infinity problem may occur. 13. Split
+horizon, route poisoning, and hold-down timers help reduce routing
+problems. 14. RIP is a common distance-vector protocol and uses hop
+count as its metric.
+
+PROCEDURE / WORKING 1. Represent the network as routers connected by
+links. 2. Assign a cost to each direct link. 3. Initialise each router’s
+distance to itself as zero. 4. Set the costs to direct neighbours
+according to link costs. 5. Set unknown destinations to infinity. 6.
+Exchange distance vectors between neighbouring routers. 7. Calculate the
+cost to each destination through every neighbour. 8. Update the routing
+table when a lower-cost route is found. 9. Repeat the exchange and
+update process until no table changes. 10. Display each router’s final
+destination, minimum cost, and next hop.
+
+CONCLUSION The Distance Vector Routing Algorithm was implemented and
+studied. The Bellman-Ford principle, exchange of routing information,
+routing-table updates, and convergence were understood.
